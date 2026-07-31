@@ -1,0 +1,32 @@
+font-family = D2Coding
+font-size = 18
+background-opacity = 0.75
+macos-titlebar-style = tabs
+background-blur = 16
+theme = Github Dark High Contrast
+
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
+initial-window = true
+
+cursor-style = block
+font-thicken = true
+# theme = dark:Catppuccin Mocha,light:Catppuccin Latte
+clipboard-trim-trailing-spaces = true
+auto-update = download
+
+# quick terminal
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+
+quick-terminal-position = bottom
+quick-terminal-size = 500px,75%
+
+shell-integration-features = cursor,sudo,title
+window-vsync = true
+
+# 0으로 하면 애니메이션 없이 즉시 나타남 (가장 빠릿함)
+quick-terminal-animation-duration = 0
+
+working-directory = ~/projects
+

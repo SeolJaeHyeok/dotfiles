@@ -1,0 +1,22 @@
+[user]
+	name = SeolJaeHyeok
+	email = milkboy2564@naver.com
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[includeIf "gitdir:/Users/seoljaehyeok/projects/mcircle/"]
+        path = .gitconfig-work
+[pull]
+	rebase = true
+[core]
+	hooksPath = /Users/seoljaehyeok/.githooks
+	symlinks = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/local/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/local/bin/gh auth git-credential

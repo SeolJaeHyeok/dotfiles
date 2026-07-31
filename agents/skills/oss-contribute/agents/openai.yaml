@@ -1,0 +1,4 @@
+interface:
+  display_name: "OSS Contribute"
+  short_description: "Guide an OSS contribution from issue selection to PR"
+  default_prompt: "Use $oss-contribute to choose an OSS contribution target, implement it safely, and prepare the PR and archive record."

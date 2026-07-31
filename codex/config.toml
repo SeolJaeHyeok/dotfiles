@@ -1,0 +1,107 @@
+approvals_reviewer = "user"
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+model_context_window = 1000000
+model_auto_compact_token_limit = 950000
+
+notify = ["/Users/seoljaehyeok/.codex/plugins/cache/openai-bundled/computer-use/1.0.755/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient", "turn-ended"]
+
+[mcp_servers.context7]
+url = "https://mcp.context7.com/mcp"
+
+[mcp_servers.postman]
+url = "https://mcp.postman.com/mcp"
+
+[mcp_servers.figma]
+url = "https://mcp.figma.com/mcp"
+
+[mcp_servers.atlassian]
+url = "https://mcp.atlassian.com/v1/mcp"
+
+[projects."/Users/seoljaehyeok/projects/open-source/typescript-eslint"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/mcircle/ai-news-letter"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/mcircle/policy-chatbot"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/.agents"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/mcircle/Bugcha"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/mcircle/ax-session"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/mcircle/wellcheck-plugins"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/mcircle/cdp-admin-react"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/mcircle/cdp-web-react"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/mcircle/blackbox"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/.hammerspoon"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/mcircle/cdp-server"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/mcircle/cdp-frontend"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/Documents/Obsidian Vault"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/mcircle/agentic-platform"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/markitdown"]
+trust_level = "trusted"
+
+[projects."/Users/seoljaehyeok/projects/mcircle/wd-harness"]
+trust_level = "trusted"
+
+[notice.model_migrations]
+"gpt-5.3-codex" = "gpt-5.4"
+"gpt-5.4" = "gpt-5.5"
+
+[marketplaces.wellcheck-plugins]
+last_updated = "2026-07-16T04:31:22Z"
+last_revision = "401725500458025d5bfbcc341f73f05190a7c9da"
+source_type = "git"
+source = "https://github.com/mcircle-dev/wellcheck-plugins.git"
+
+[marketplaces.openai-bundled]
+last_updated = "2026-05-18T08:07:24Z"
+source_type = "local"
+source = "/Users/seoljaehyeok/.codex/.tmp/bundled-marketplaces/openai-bundled"
+
+[plugins."computer-use@openai-bundled"]
+enabled = true
+
+[plugins."wellcheck@wellcheck-plugins"]
+enabled = true
+
+[tui]
+status_line = ["model-with-reasoning", "git-branch", "context-remaining", "context-used", "five-hour-limit", "weekly-limit", "context-window-size", "used-tokens", "total-input-tokens", "total-output-tokens"]
+status_line_use_colors = true
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
+
+[features]
+goals = true

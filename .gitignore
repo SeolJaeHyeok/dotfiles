@@ -1,0 +1,9 @@
+.DS_Store
+*.backup.*
+*.local
+state/
+*.log
+*.sqlite*
+auth.json
+hosts.yml
+credentials

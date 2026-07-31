@@ -1,0 +1,55 @@
+#!/bin/sh
+
+echo "----------------------------------------"
+echo "[post-checkout] Hook triggered"
+
+# ✅ 현재 브랜치 이름
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+
+# ✅ 자동 pull 대상 브랜치 목록
+AUTO_PULL_BRANCHES="release main master dev"
+
+echo "[post-checkout] Current branch: $BRANCH_NAME"
+
+# ✅ 대상 브랜치인지 확인
+IS_TARGET=false
+for TARGET in $AUTO_PULL_BRANCHES
+do
+  if [ "$BRANCH_NAME" = "$TARGET" ]; then
+    IS_TARGET=true
+    break
+  fi
+done
+
+# ✅ 대상 브랜치 아니면 종료
+if [ "$IS_TARGET" = false ]; then
+  echo "[post-checkout] Not target branch. Skip."
+  exit 0
+fi
+
+# ✅ 로컬 변경사항 존재 여부 확인 (tracked + staged 모두)
+if ! git diff --quiet || ! git diff --cached --quiet; then
+  echo "[post-checkout] ⚠ Local changes detected!"
+  echo "[post-checkout] Skip auto pull for safety."
+  exit 0
+fi
+
+# ✅ 원격 브랜치 존재 여부 확인
+if ! git ls-remote --exit-code --heads origin "$BRANCH_NAME" > /dev/null 2>&1; then
+  echo "[post-checkout] ⚠ origin/$BRANCH_NAME not found. Skip."
+  exit 0
+fi
+
+# ✅ pull 수행
+echo "[post-checkout] ✅ Auto pulling origin/$BRANCH_NAME ..."
+git pull origin "$BRANCH_NAME"
+
+RESULT=$?
+if [ $RESULT -ne 0 ]; then
+  echo "[post-checkout] ❌ Pull failed (exit code: $RESULT)"
+else
+  echo "[post-checkout] ✅ Pull completed successfully"
+fi
+
+echo "----------------------------------------"
+
